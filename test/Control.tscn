@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GodotChrome.gd" type="Script" id=1]
+
+[node name="Control" type="ReferenceRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+rect_scale = Vector2( 6.12, 1 )
+border_width = 2.2
+editor_only = false
+script = ExtResource( 1 )
