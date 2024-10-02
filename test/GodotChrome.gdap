@@ -1,0 +1,5 @@
+[config]
+
+name="GodotChrome"
+binary_type="local"
+binary="app-release.aar"
