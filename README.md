@@ -1,8 +1,10 @@
 **Godot Chrome**
+
 Godot Chrome is a plugin that exposes Android Webkit's API v1 to Godot Engine GDScript  via Android Plugins.
 Users can create Embedded Chrome Webbrowser in godot engine
 
 This Plugin Currently Works For The Godot 3.5 Branch and Newer. It Uses V1 Plugin Integration with .gdap files but uses godot's maven repository as a dependency in the projects's build.gradle files rather than the local aar files. 
+
 
 **Docs**
 
@@ -24,9 +26,9 @@ This Plugin Currently Works For The Godot 3.5 Branch and Newer. It Uses V1 Plugi
 
 (4) `getTitle()` returns the Title of the loaded url as a string
 
-(5) getProgress() Gets the Progress of the currrent page from 1 - 100
+(5) `getProgress()` Gets the Progress of the currrent page from 1 - 100
 
-(6) consoleLog() prints out the console.log() Javascript entries to Godot Engine as a dictionary. It also debugs the Chrome Embedded Instance Status & State
+(6) `consoleLog()` prints out the console.log() Javascript entries to Godot Engine as a dictionary. It also debugs the Chrome Embedded Instance Status & State
 
 (7) connected signal which is emitted once an embedded browser instance is created
 
