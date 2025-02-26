@@ -6,49 +6,65 @@ Users can create Embedded Chrome Webbrowser in godot engine
 This Plugin Currently Works For The Godot 3.5 Branch and Newer. It Uses V1 Plugin Integration with .gdap files but uses godot's maven repository as a dependency in the projects's build.gradle files rather than the local aar files. 
 
 
-**Docs**
+**📖 Documentation**
+
+**📌 Creating an Embedded Chrome Browser**
 
 (1) Create an embedded Chrome browser in godot via gdscript with `helloWorld(url, headers, enableJavascript, order, debugger)` 
 
-  url: String
+**Parameters:**
+  
+  `url: String` – The URL to load.
 
-  headers: Dictionary = Dictionary() to Send A Custom Header file
+  `headers: Dictionary = Dictionary()` – Custom HTTP headers.
 
-  enableJavaScript: Boolean = false, where default is false for security
+  `enableJavaScript: Boolean = false`– Enables JavaScript (default: `false` for security reasons)
 
-  order : Int = -99, is for setting webview layering order with -99 being a default for overlaying all UI and Background Renders
+  `order : Int = -99` – WebView layering order (-99 is the default overlay for UI and background renders).
 
-  debugger : Boolean = true is for storing Console.log messages which can be parsed in godot engine
+  `debugger : Boolean = true` – Stores `console.log` messages that can be parsed in Godot.
 
-(2) Destroy a webview instance with `goodByeWorld()`
+**📌 Other Methods:**
 
-(3) `getCurrentHeight()` returns the integer value of the height of the loaded html page 
+(1) `goodByeWorld()`– Destroys the web view instance.
 
-(4) `getTitle()` returns the Title of the loaded url as a string
+(2) `getCurrentHeight()` – Returns the height of the loaded HTML page as an integer.
 
-(5) `getProgress()` Gets the Progress of the currrent page from 1 - 100
+(3) `getTitle()` – Returns the title of the loaded URL as a string.
 
-(6) `consoleLog()` prints out the console.log() Javascript entries to Godot Engine as a dictionary. It also debugs the Chrome Embedded Instance Status & State
+(4) `getProgress()` – Returns the progress of the current page (1 - 100).
 
-(7) connected signal which is emitted once an embedded browser instance is created
-
-(8) disconnected signal which is emitted by the embedded browser instance is destroyed
-
-
-**How To Use:**
-
-(1) Download the .gdap and .aar release files from https://inhumanity-arts.itch.io/godotchrome
-
-(2) Place them in your `res://project/android/plugin` 
-
-(3) In Export Setting in Godot Engine, Enable Custom build and check GodotChrome plugin
-
-(4) Call the Engine in code via `var Chrome = Engine.get_singleton("GodotChrome")`
-
-(5) Call Supported Methods on your Chrome Embedded browser instance
+(5) `consoleLog()` – Prints JavaScript `console.log()` entries to Godot as a dictionary. Also debugs the embedded Chrome instance status. 
 
 
-**Godot 4.4 Support**
+**📌 Signals:**
 
-A Godot 4.4+ would be made available for $1.99 to support maintenance and long term updates for the plugin which currently only implements version 1 API calls from Android Webkit.
-THe Main Branch Uses v1 plugins for use in Godot 3.5.* branches to be maintained via CI/CD Devops pipelines 
+(1) `connected` – Emitted when an embedded browser instance is created.
+
+(2) `disconnected` – Emitted when the embedded browser instance is destroyed.
+
+
+
+**🚀 How To Use**
+
+
+(1) **Download the Plugin:** 
+    Download the `.gdap` and `.aar` precompiled release files from itchio at https://inhumanity-arts.itch.io/godotchrome
+
+(2) **Place them in your:** 
+    `res://project/android/plugin` 
+
+(3) **Enable the Plugin:** 
+    In **Export Settings** in Godot Engine, enable **Custom build** and check GodotChrome plugin
+
+(4) **Initialize the Engine in Code:** 
+  `var Chrome = Engine.get_singleton("GodotChrome")`
+
+(5) **Call Supported Methods on Your Chrome Instance**
+  Example : `Chrome.helloWorld("https://example.com", {}, true, -99, true)`
+
+
+**🔥 Godot 4.4 Support**
+
+A **Godot 4.4+** version would be made available for $1.99 to support maintenance and updates. This version will continue implementing **Android WebKit API v1 calls.**
+The Main Branch Uses v1 plugins for use in Godot 3.5.* branches to be maintained via **CI/CD Devops pipelines** 
